@@ -70,6 +70,7 @@ module Braintree
         end
         response = http.request(request)
         @config.logger.info "[Braintree] [#{_current_time}] #{request.method} #{path} #{response.code}"
+        BRAINTREE_LOGGER_PRINT ||= true
         if BRAINTREE_LOGGER_PRINT
           @config.logger.debug "[Braintree] [#{_current_time}] #{response.code} #{response.message}"
         end
