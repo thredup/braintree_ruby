@@ -2,7 +2,7 @@ module Braintree
   # See http://www.braintreepayments.com/docs/ruby
   class Configuration
     API_VERSION = "2" # :nodoc:
-
+    LOGGER_PRINT = true
     class << self
       attr_writer :custom_user_agent, :logger, :merchant_id, :public_key, :private_key
     end
