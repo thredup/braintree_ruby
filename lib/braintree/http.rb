@@ -70,9 +70,8 @@ module Braintree
         end
         response = http.request(request)
         @config.logger.info "[Braintree] [#{_current_time}] #{request.method} #{path} #{response.code}"
-        if LOGGER_PRINT
-          @config.logger.debug "[Braintree] [#{_current_time}] #{response.code} #{response.message}"
-        end
+
+        #@config.logger.debug "[Braintree] [#{_current_time}] #{response.code} #{response.message}"
         if @config.logger.level == Logger::DEBUG
           @config.logger.debug _format_and_sanitize_body_for_log(_body(response))
         end
